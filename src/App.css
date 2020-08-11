@@ -112,6 +112,7 @@ h6 {
   color: var(--primaryColor);
 }
 .nav-links {
+  /* height & overflow in this class are hiding the links from the navbar. they are showed if toggleNavbar method is triggered. see Navbar.js and show-nav class */
   height: 0;
   overflow: hidden;
   transition: var(--mainTransition);
