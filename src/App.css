@@ -159,7 +159,8 @@ h6 {
 /* Hero */
 .defaultHero,
 .roomsHero {
-  min-height: calc(100vh - 66px);
+  /* min-height: 100 viewHeights & getting rid of the navbar height*/
+  min-height: calc(100vh - 66px); 
   background: url("./images/defaultBcg.jpeg") center/cover no-repeat;
   display: flex;
   align-items: center;
