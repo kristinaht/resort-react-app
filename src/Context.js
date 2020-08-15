@@ -7,10 +7,13 @@ const RoomContext = React.createContext();
 
 //RoomProvider is the Context.js
 class RoomProvider extends Component {
-  state= {};
+  state= {
+    greeting: 'hello',
+    name: 'Kristina'
+  };
   render() {
     return ( 
-      <RoomContext.Provider value={'hello'}>
+      <RoomContext.Provider value={{...this.state}}>
         {this.props.children}
       </RoomContext.Provider>
     );

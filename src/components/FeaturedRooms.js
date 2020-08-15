@@ -8,7 +8,7 @@ export default class FeaturedRooms extends Component {
     console.log(value)
     return (
       <div>
-        hello from featured FeaturedRooms { value }
+        hello from featured FeaturedRooms { value.name }
       </div>
     )
   }
