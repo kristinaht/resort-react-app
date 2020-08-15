@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 const RoomContext = React.createContext();
 //Provider (RoomContext) is responsible for allowing all components in component tree to access it. Component tree needs to be wrapped with the RoomContextProvider.
 
