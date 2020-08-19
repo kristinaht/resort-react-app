@@ -46,9 +46,19 @@ class RoomProvider extends Component {
     })
     return tempItems;
   }
+
+  getRoom = slug => {
+    let tempRooms = [...this.state.rooms];
+    const room = tempRooms.find(room => room.slug === slug); //find returns an object which is why we use it here. with filter, we would get an array that would than need to be dealt with to get a single object.
+    return room;
+  }
+
   render() {
     return ( 
-      <RoomContext.Provider value={{...this.state}}>
+      <RoomContext.Provider value={{
+        ...this.state,
+        getRoom: this.getRoom
+        }}>
         {this.props.children}
       </RoomContext.Provider>
     );
