@@ -67,5 +67,14 @@ class RoomProvider extends Component {
 
 const RoomConsumer = RoomContext.Consumer;
 
+//I can use arrow function here as well
+export function withRoomConsumer(Component){
+  return function ConsumerWrapper(props){
+    return <RoomConsumer>
+      {value => <Component {...props} context={value} />}
+    </RoomConsumer>
+  }
+}
+
 export { RoomProvider, RoomConsumer, RoomContext };
 //since ReactDOM is rendered in index.js, RoomProvider is going to be used in index.js
