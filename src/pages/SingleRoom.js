@@ -34,9 +34,12 @@ export default class SingleRoom extends Component {
     }
 
     const { name, description, capacity, size, price, extras, breakfast, pets, images } = room;
+    const [mainImg, ...defaultImg] = images;
+    console.log(defaultImg)
+
     return (
       <React.Fragment>
-        <StyledHero  img={images[0] || this.state.defaultBcg}>
+        <StyledHero  img={mainImg || this.state.defaultBcg}>
           <Banner title={`${name} room`}>
             <Link to='/rooms' className='btn-primary'>
               back to rooms
@@ -46,7 +49,7 @@ export default class SingleRoom extends Component {
         <section className='single-room'>
           <div className='single-room-images'>
 
-          {images.map((item, index) => {
+          {defaultImg.map((item, index) => {
             return <img key={index} src={item} alt={name}/>
           })}
           </div>
