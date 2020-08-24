@@ -43,6 +43,14 @@ export default class SingleRoom extends Component {
             </Link>
           </Banner>
         </StyledHero>
+        <section className='single-room'>
+          <div className='single-room-images'>
+
+          {images.map((item, index) => {
+            return <img key={index} src={item} alt={name}/>
+          })}
+          </div>
+        </section>
       </React.Fragment>
     );
   }
