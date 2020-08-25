@@ -21,7 +21,7 @@ function RoomsContainer({ context }){
   );
 }
       
-
+//I pass the RoomsContainer in the withRoomConsumer HOC and that is how I get access to the context in line 9
 export default withRoomConsumer(RoomsContainer)
 
 
