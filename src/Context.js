@@ -69,14 +69,24 @@ class RoomProvider extends Component {
   }
 
   handleChange = event => {
-    const type = event.target.type;
+    const target = event.target;
+    const value = event.type === 'checkbox' ? target.checked : target.value;
     const name = event.target.name;
-    const value = event.target.value;
-    console.log(`this is type: ${type}, name: ${name}, value: ${value}`);
+    this.setState({
+      [name]: value
+    }, this.filterRooms);
+   
   }
 
   filterRooms = () => {
-    console.log('hello')
+    let { rooms, type, capacity, price, minSize, maxSize, breakfast, pets } = this.state;
+    let tempRooms = [...rooms];
+    if(type !== 'all'){
+      tempRooms = tempRooms.filter(room => room.type === type) //get me all the rooms that have the same type value that we are getting from the state.
+    }
+    this.setState({
+      sortedRooms: tempRooms
+    })
   }
 
   render() {
