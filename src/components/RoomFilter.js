@@ -5,7 +5,7 @@ import Title from '../components/Title'
 
 //get all unique values:
 const getUnique = (items, value) => {
-  return [... new Set(items.map(item => item[value]))] //using dynamic properties with passing in the value string
+  return [...new Set(items.map(item => item[value]))] //using dynamic properties with passing in the value string
 }
 
 export default function RoomFilter({ rooms }) {
